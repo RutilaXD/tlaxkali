@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_juegoadministrador" value="name:id_pedido;datatype:int,name:producto;datatype:string,name:cantidad;datatype:int,name:precio;datatype:int,name:total;datatype:int,name:id_comprador;datatype:int,name:nombre;datatype:string,name:direccion;datatype:string,name:telefono;datatype:int,name:correo;datatype:string" />
+	<infoitem key="UD_juegopedidos" value="name:id_pedido;datatype:int,name:producto;datatype:string,name:cantidad;datatype:int,name:precio;datatype:int,name:total;datatype:int" />
+	<infoitem key="UD_juegocompradores" value="name:id_comprador;datatype:int,name:nombre;datatype:string,name:direccion;datatype:string,name:telefono;datatype:int,name:correo;datatype:string" />
+</info>

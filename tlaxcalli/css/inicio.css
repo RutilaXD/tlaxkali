@@ -1,0 +1,214 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27/06/2015, 05:17:31 PM
+    Author     : Angel Medina
+*/
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.spaner{
+    display: block;
+    background-color: #F57C00;
+    color: #ffffff;
+    width: 20%;
+    min-width: 200px;
+    font-family: Corbel;
+    font-size: 15px;
+    padding: 4px;
+    text-align: center;
+    margin: 20px auto;        
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.spaner2{
+    display: block;
+    background-color: #006dcc;
+    color: #ffffff;
+    width: 20%;
+    min-width: 200px;
+    font-family: Corbel;
+    font-size: 15px;
+    padding: 4px;
+    text-align: center;
+    margin: 20px auto;   
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.spaner3{
+    display: block;
+    background-color: #00796B;
+    color: #ffffff;
+    width: 20%;
+    min-width: 200px;
+    font-family: Corbel;
+    font-size: 15px;
+    padding: 4px;
+    text-align: center;
+    margin: 20px auto;  
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.spaner4{
+    display: block;
+    background-color: #4b5973;
+    color: #ffffff;
+    width: 20%;
+    min-width: 200px;
+    font-family: Corbel;
+    font-size: 15px;
+    padding: 4px;
+    text-align: center;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    margin: 20px auto;        
+}
+.menusesion{
+    font-family: Corbel;
+    font-size: 25px;
+    color: #006dcc;
+    text-align: center;
+}
+.spanerchico{
+    display: block;
+    background-color: red;
+    color: #ffffff;
+    width: 10%;
+    min-width: 200px;
+    font-family: Corbel;
+    font-size: 15px;
+    padding: 4px;
+    text-align: center;
+    margin: 20px auto;  
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.tablaReporte{
+    margin: 2% auto;
+    border-style: solid;
+    border-color: #F57C00;
+    padding: 5px;
+    border-spacing: 15px;
+}
+.bota{
+    display: block;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease; 
+    -moz-transform: scale(1) translateY(0px);
+    -webkit-transform: scale(1) translateY(0px);
+    -o-transform: scale(1) translateY(0px);
+    -ms-transform: scale(1) translateY(0px);
+    transform: scale(1) translateY(0px);
+}
+.bota:hover{
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    -moz-transform: scale(1.4) translateX(10px);
+    -webkit-transform: scale(1.4) translateX(10px);
+    -o-transform: scale(1.4) translateX(10px);
+    -ms-transform: scale(1.4) translateX(10px);
+    transform: scale(1.4) translateX(10px);
+}
+.imagenProducto{
+    float: left;
+    width: 20%;
+    margin: 7.5%;
+}
+.contenidoTabla{
+    float: right;
+    width: 50%;
+    margin: 7.5%;
+
+}
+.tablaGeneral{
+    width: 100%; 
+    font-family: Corbel;
+    margin: 0 auto;
+    padding: 5px;
+    border-spacing: 10px;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #F57C00;
+}
+.iconito{
+    display: block;
+    color: #000;
+    font-family: Corbel;
+    font-size: 15px;
+    padding: 4px;
+    text-align: center;      
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.tecnico{
+    background-color: #bdc3c7;
+    border-style: none;
+    width: 90%;
+    text-align: center;
+}
+.descripcion{
+    background-color: #bdc3c7;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    min-height: 40px;
+    padding: 10px;
+    text-align: justify;
+}
+.none{
+    display: none;
+}
+.salida{
+    position: relative;
+    top: 60px;
+    display:block;
+    color: #fff;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    line-height: 130px;
+    font-family: Corbel;
+    font-size: 20px;
+    background-color: #006dcc;
+    text-align:center;
+    border-radius: 300px;
+    box-shadow: 0px 2px 20px #000;
+     -webkit-transition: width 1s ease,height 1s ease,background-color 2s ease-out, border-radius 2s ease-in-out, padding 1s ease 2s, box-shadow 1s ease 2s, color 3s linear;
+}
+.texto{
+    width: 100%;
+    text-align: justify;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #006dcc;
+    outline-style: none;
+    min-height: 50px;
+}

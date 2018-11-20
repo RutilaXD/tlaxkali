@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_consultatlaxcalli" value="name:id_pedido;datatype:int,name:producto;datatype:string,name:cantidad;datatype:int,name:precio;datatype:int,name:total;datatype:int" />
+	<infoitem key="UD_Registrostlaxcalli" value="name:id_pedido;datatype:int,name:producto;datatype:string,name:cantidad;datatype:int,name:precio;datatype:int,name:total;datatype:int" />
+</info>
