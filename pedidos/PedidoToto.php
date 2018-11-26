@@ -1,126 +1,85 @@
-<?php require_once('Connections/tlaxcalliconexion.php'); ?>
-<?php
-if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
-
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
-}
-
-$editFormAction = $_SERVER['PHP_SELF'];
-if (isset($_SERVER['QUERY_STRING'])) {
-  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
-}
-
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO pedido (producto, cantidad, precio, total) VALUES (%s, %s, %s, %s)",
-                       GetSQLValueString($_POST['producto'], "text"),
-                       GetSQLValueString($_POST['cantidad'], "int"),
-                       GetSQLValueString($_POST['precio'], "int"),
-                       GetSQLValueString($_POST['total'] = $_POST['cantidad'] * $_POST['precio'] , "int"));
-
-  mysql_select_db($database_tlaxcalliconexion, $tlaxcalliconexion);
-  $Result1 = mysql_query($insertSQL, $tlaxcalliconexion) or die(mysql_error());
-   $insertGoTo = "DatosComprador.php";
-  if (isset($_SERVER['QUERY_STRING'])) {
-    $insertGoTo .= (strpos($insertGoTo, '?')) ? "&" : "?";
-    $insertGoTo .= $_SERVER['QUERY_STRING'];
-  }
-  header(sprintf("Location: %s", $insertGoTo));
-}
-
-if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
-  $insertSQL = sprintf("INSERT INTO pedido (producto, cantidad, precio, total) VALUES (%s, %s, %s, %s)",
-                       GetSQLValueString($_POST['producto'], "text"),
-                       GetSQLValueString($_POST['cantidad'], "int"),
-                       GetSQLValueString($_POST['precio'], "int"),
-                       GetSQLValueString($_POST['total'], "int"));
-
-  mysql_select_db($database_tlaxcalliconexion, $tlaxcalliconexion);
-  $Result1 = mysql_query($insertSQL, $tlaxcalliconexion) or die(mysql_error());
-}
-
-mysql_select_db($database_tlaxcalliconexion, $tlaxcalliconexion);
-$query_Recordset1 = "SELECT * FROM pedido";
-$Recordset1 = mysql_query($query_Recordset1, $tlaxcalliconexion) or die(mysql_error());
-$row_Recordset1 = mysql_fetch_assoc($Recordset1);
-$totalRows_Recordset1 = mysql_num_rows($Recordset1);
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Exquisitas Tortillas</title>
-<script> 
-function calculo(cantidad,precio,inputtext,totaltext){ 
-gndtotal= totaltext.value - inputtext.value ; 
-// Calculo subtotal / 
-subtotal = (precio*cantidad); 
-inputtext.value= subtotal; 
-total = eval(gndtotal); 
-totaltext.value= total + subtotal; 
-}
-</script> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Exquisitos totopos</title>
+  <script> 
+    function calculo(){ 
+      var cantidad = document.getElementById('cantida').value;
+      var precio = document.getElementById('preciocompra1').value;
+      var inputtext = document.getElementById('totalcompra1');
+
+      subtotal = (precio*cantidad); 
+      inputtext.value= subtotal; 
+    }
+  </script>
+  <style type="text/css">
+  body {
+    background-image: url('../img/totopos.png');
+    background-size: cover;
+  }
+
+  table {
+    width: 50%;
+    background-color: antiquewhite;
+    opacity: 0.8;
+    text-align: justify;
+    padding: 2% ;
+    margin-top: 12%;
+    border-radius: 4%;
+    font-size: xx-large;
+  }
+
+  input.fields {
+    width: 80%;
+    font-size: x-large;
+    margin-left: 4%;
+  }
+
+  #submitt {
+    position: relative;
+    display: block;
+    margin: 5% 0 0 20%;
+    border: none;
+    color:white;
+    width: 200px;
+    height: 35px;
+    background-color: #faa732;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;    
+  }
+</style>  
 </head>
 
-<body>
-<form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
-  <table align="center">
-    <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Producto:</td>
-      <td><input name="producto" type="hiddentext" value="Totopos" size="32" readonly="readonly"</td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Cantidad:</td>
-      <td><input type="text" name="cantidad" id="cantida" value="" size="32" 
-      onChange="calculo(this.value,preciocompra1.value,totalcompra1,total);"
-      />
-      </td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Precio:</td>
-      <td><input name="precio" type="hiddentext" id="preciocompra1" value="11" size="32" readonly="readonly" /></td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap="nowrap" align="right">Total:</td>
-      <td><input name="total" type="hiddentext" id="totalcompra1" value="" size="32" readonly="readonly"
+<body onload="document.form1.reset();">
+  <form action="../cliente/pedido.php" method="post" name="form1" id="form1">
+    <table align="center">
+      <tr valign="baseline">
+        <td nowrap="nowrap" align="right">Producto:</td>
+        <td><input class="fields" name="producto" type="hiddentext" value="Totopos" size="32" readonly="readonly"</td>
+      </tr>
+      <tr valign="baseline">
+        <td nowrap="nowrap" align="right">Cantidad:</td>
+        <td><input class="fields" type="number" name="cantidad" id="cantida" value="1" size="32"  min="1"
+          onblur="calculo();" required="required"/>
+        </td>
+      </tr>
+      <tr valign="baseline">
+        <td nowrap="nowrap" align="right">Precio:</td>
+        <td><input class="fields" name="precio" type="hiddentext" id="preciocompra1" value="11" size="32" readonly="readonly" /></td>
+      </tr>
+      <tr valign="baseline">
+        <td nowrap="nowrap" align="right">Total:</td>
+        <td><input class="fields" name="total" type="hiddentext" id="totalcompra1" value="" size="32" readonly="readonly"
           /></td>
-    </tr>
-    <tr valign="baseline">
-      <td nowrap="nowrap" align="right">&nbsp;</td>
-      <td><input type="submit" value="Realizar Pedido" /></td>
-    </tr>
-  </table>
-  <input type="hidden" name="MM_insert" value="form1" />
-</form>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-</body>
-</html>
-<?php
-mysql_free_result($Recordset1);
-?>
+        </tr>
+        <tr valign="baseline">
+          <td nowrap="nowrap" align="right">&nbsp;</td>
+          <td><input id="submitt" type="submit" value="Realizar Pedido" onclick="calculo();" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+  </html>
