@@ -1,0 +1,21 @@
+table{
+	border-collapse:collapse;
+	width:42%;
+}
+
+th, td{
+	text-align:left;
+	padding:8px;
+}
+
+tr:nth-child(even){
+	background-color:#f2f2f2;
+}
+td:hover{
+	background: #F08080;
+	color: #fff;
+}
+p{
+	font-family: "Century Gothic";
+	font-size: 25px;
+}
