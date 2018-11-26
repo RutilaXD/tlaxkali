@@ -1,0 +1,89 @@
+body {
+    background-image: url(../img/demo-2-bg.jpg);
+    background-size: auto;
+    background-attachment: scroll;
+  }
+  .preg{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: Corbel;
+    font-size: 45px;
+    color: #faa732; 
+    text-align: center;
+  }
+
+  #caja {
+    background-color: #FFFFFF;
+    opacity: 0.75;
+    display: block;
+    width:70%;    
+    height: fit-content;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  #usuario, #password{
+    display: block;
+    margin: 10px auto; 
+    font-size: 15px;
+    width: 100%;
+    border-radius: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #00796B;
+  }
+  #tabla {
+    margin: auto;
+    margin-top: 20px;
+    width: 70%;
+  }
+  label {
+    font-family: monospace;
+    font-size: 25px;
+  }
+  a{
+    text-decoration: none;
+  }
+  input[type="submit"]{
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    border: none;
+    color:white;
+    width: 200px;
+    height: 35px;
+    background-color: #faa732;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+  }
+  input[type="text"]:focus{
+    outline: 2px;
+    outline-color: #00796B;
+    outline-style: solid;
+  }
+  input[type="password"]:focus{
+    outline: 2px;
+    outline-color: #00796B;
+    outline-style: solid;
+  }
+  .registro{
+    display: block;
+    margin-top: 60px;
+    font-family: Corbel;
+    text-align: center;
+    padding: 20px;
+  }
+  @media screen and (max-width: 500px){
+    nav{
+      display:none;
+    }
+    #table{
+      width: 100%;
+    }
+    #preg{
+      font-size: 15px;
+    }
+  }
