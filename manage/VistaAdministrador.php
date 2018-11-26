@@ -16,21 +16,14 @@ if (!empty($_SESSION)){
 	<head>
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	  <title>Aministrador</title>
-	  <style type="text/css">
-		body {
-			background-image: url('../img/madera.jpg');
-		}
-		
-		table {
-			margin: auto;
-			text-align: center;
-		}
-	  </style>
+	  <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+	  <style type="text/css">body{background-image: url('../img/tortillas.jpg'); background-size: cover;}</style>
 	</head>
 
 	<body onblur="window.location.reload();">
+	<center><h1>Pedidos del día de hoy</h1></center>
 	  <div>
-		<table border="1">
+		<table>
 		  <tr>
 			<th scope="col"># Pedido</th>
 			<th scope="col">Producto</th>
@@ -56,12 +49,15 @@ if (!empty($_SESSION)){
 			<td><?php echo $row_juegopedidos['direccion']; ?></td>
 			<td><?php echo $row_juegopedidos['telefono']; ?></td>
 			<td><?php echo $row_juegopedidos['correo']; ?></td>
-			<td><a href="VistaAdministrador.php?id_pedido=<?php echo $row_juegopedidos['id_pedido']; ?>">Borrar</a> | Entregado</td>
+			<td><a href="eliminar.php?id_pedido=<?php echo $row_juegopedidos['id_pedido']; ?>">Borrar</a> | Entregado</td>
 		  </tr>
 		  <?php } while ($row_juegopedidos = mysql_fetch_assoc($juegopedidos)); ?>
 		</table>
 	  </div>
-	  <center><h1 onclick="window.location.href='salir.php';">Cerrar sesión</h1></center>
+	  <center>
+		<h1 onclick="window.location.href='Ganancias.php';">Ver ganancias</h1>
+		<h1 onclick="window.location.href='salir.php';">Cerrar sesión</h1>
+		</center>
 	</body>
 	</html>	
 	<?php
